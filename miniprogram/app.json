@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/index",
+    "pages/goods_list/index",
+    "pages/goods_detail/index",
+    "pages/cart/index",
+    "pages/collect/index",
+    "pages/order/index",
+    "pages/search/index",
+    "pages/user/index",
+    "pages/feedback/index",
+    
+    "pages/auth/index",
+    "pages/pay2/index",
+    "pages/pay/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFE300",
+    "navigationBarTitleText": "移动电子商务",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#484848",
+    "backgroundColor": "#FFE300",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/shouye.png",
+        "selectedIconPath": "icons/shouye2.png"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "分类",
+        "iconPath": "icons/fenlei.png",
+        "selectedIconPath": "icons/fenlei2.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "icons/gouwuche.png",
+        "selectedIconPath": "icons/gouwuche2.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "icons/wode.png",
+        "selectedIconPath": "icons/wode2.png"
+      }
+    ]
+  },
+  
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

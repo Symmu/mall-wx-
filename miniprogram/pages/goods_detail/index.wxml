@@ -1,0 +1,62 @@
+<!-- 商品轮播图 -->
+<view class="detail_swiper">
+    <image src="{{GoodsObj.goods_small_logo}}" mode="widthFix"></image>
+    <!-- <swiper indicator-dots circular autoplay> 
+        <swiper-item 
+        wx:for="{{GoodsObj.pics}}"
+        wx:key="pics_id"
+        bindtap="handlePreviewImage"
+        data-url="{{item.picsMid}}"
+        >
+            <image src="{{item.picsMid}}" mode="widthFix"></image>
+        </swiper-item>
+    </swiper> -->
+</view> 
+<!-- 商品轮播图 --> 
+
+
+<view class="goods_price">￥{{GoodsObj.goods_price}}</view>
+<view class="goods_name_row">
+    <view class="goods_name">{{GoodsObj.goods_name}}</view>
+    <view class="goods_collect" bindtap="handleCollect">
+        <text class="iconfont {{isCollect?'iconshoucang1':'iconshoucang'}}"></text>
+        <view class="collect_text">收藏</view>
+    </view>
+</view>
+
+ 
+<view class="goods_info">
+    <view class="goods_info_title">图文详情</view>
+    <view class="goods_info_content">
+        <!-- 富文本 -->
+        <!-- {{GoodsObj.goods_introduce}} -->
+        <rich-text nodes="{{GoodsObj.goods_introduce}}"></rich-text>
+    </view>
+</view>
+
+<view class="btm_bool">
+    <view class="tool_item">
+        <view class="iconfont iconkefu"></view>
+        <view>客服</view>
+        <button open-type="contact"></button>
+    </view>
+    <view class="tool_item">
+        <view class="iconfont iconfenxiang"></view>
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view>
+    <navigator open-type="switchTab" url="/pages/cart/index" class="tool_item">
+        <view class="iconfont icongouwuche"></view>
+        <view>购物车</view>
+    </navigator>
+    <view class="tool_item btn_cart" bindtap="handleCartAdd">
+        <view>加入购物车</view>
+    </view>
+    <view class="tool_item btn_buy">
+        
+        <!-- <navigator url="/pages/pay/index" hover-class="navigator-hover" 
+                open-type="navigate"> -->
+            <view bindtap="handlePay"hover-class="navigator-hover" >立即购买</view>
+        <!-- </navigator> -->
+    </view>
+</view>

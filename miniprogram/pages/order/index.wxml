@@ -1,0 +1,62 @@
+<Tabs tabs="{{tabs}}" bind:tabsItemChange="handleTabsItemChange">
+        <view class="order_main">
+            <view class="order_item" wx:for="{{orders}}" wx:key="order_id" bindtap="handlePay"
+                hover-class="navigator-hover" data-data="{{item}}">
+                <view class="order_no_row">
+                    <view class="order_no_text">订单编号</view>
+                    <!-- {{item.order_number}} -->
+                    <view class="order_no_value">{{item.order_number}}</view>
+                </view>
+                <view class="order_price_row">
+                    <view class="order_price_text">订单价格</view>
+                    <!-- {{item.order_price}} -->
+                    <!-- <block wx:for="{{item.orderGoods}}" wx:key="goods_id">
+                        <view class="order_price_num">数量x{{item.goods_number}}\t价格:￥{{item.goods_price}}</view>
+                        <view class="order_price_num">数量x{{item.goods_number}}</view>
+                    </block> -->
+                    <view class="order_price_value" style="color:{{item.order_pay == '1' ? '' : '#eb4450'}};">
+                        {{item.order_pay == '1' ? '已付款:' : '待付款:'}}￥{{item.order_price}}
+                    </view>
+                </view>
+                <view class="order_time_row">
+                    <view class="order_time_text">订单日期</view>
+                    <!-- {{item.create_time_cn}} -->
+                    <view class="order_time_value">{{tools.sub(item.create_time_cn)}}</view>
+                </view>
+            </view>
+        </view>
+</Tabs>
+
+<!-- <wxs module="util2">
+    var sub = function(val) {
+        return val.substring(0, 4)+"年"+val.substring(4)+"月"
+    }
+    module.exports = {
+        sub: sub
+    }
+    // module.exports.sub = sub;
+</wxs> -->
+<wxs module="tools">
+    var foo = "'hello world' from tools.wxs";
+    var bar = function (d) {
+        return d;
+    }
+    var sub = function (val) {
+        return val.substring(0, 4) + "年" +
+            val.substring(4, 6) + "月" +
+            val.substring(6, 8) + "日" +
+            val.substring(8, 10) + ":" +
+            val.substring(10, 12) + ":" +
+            val.substring(12, 14) + ""
+    }
+    var slice = function (str, a, b) {
+        return str.slice(a, b);
+    }
+    module.exports = {
+        FOO: foo,
+        bar: bar,
+        sub: sub,
+        slice: slice
+    };
+    module.exports.msg = "some msg";
+</wxs>
